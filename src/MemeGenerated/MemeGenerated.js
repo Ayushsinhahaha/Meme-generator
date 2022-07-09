@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import { Navigate, useNavigate, useLocation } from "react-router-dom";
+import {  useNavigate, useLocation } from "react-router-dom";
 import { useClipboard } from "use-clipboard-copy";
 
 export const MemeGenerated = () => {
@@ -18,10 +18,8 @@ export const MemeGenerated = () => {
 
   return (
     <div className={styles.container}>
-      <button onClick={() => navigate("/")} className={styles.home}>
-        Make More Memes
-      </button>
-      {url && <img src={url} />}
+      <button onClick={() => navigate("/")} className={styles.home}>Make More Memes</button>
+      {url && <img src={url} alt="img" />}
       <button onClick={copyLink} className={styles.copy}>
         {copied ? "Link copied!" : "Copy Link"}
       </button>
